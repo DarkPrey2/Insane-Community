@@ -1,0 +1,50 @@
+
+<?php $__env->startSection('content'); ?>
+    <section id="content">
+<?php if(Auth::check()): ?>
+    <div class="alert-box warning radius">L'acces a la page n'est pas autorisé pour les membres connectés <b><a href="<?php echo URL::to('/compte'); ?>"> retourner ?</a></b></div>
+<?php else: ?>
+<div class="small-8 large-centered columns">
+    <div class="hide-for-small panel radius">
+        <h3><?php echo 'The Facemash'; ?></h3>
+    <h5 class="subheader">Click sur la photo qui te plais le plus !</h5>
+ <ul class="inline-list mister">
+        <li><a href="<?php echo URL::to('/signin'); ?>">Login</a></li>
+        <li><a href="<?php echo URL::to('/signup'); ?>">register</a></li>
+    </ul>
+    </div>
+    <div class="row">
+
+        <div class="small-block-grid-2 small-centered columns">
+         <div class="panel">
+        <?php echo Form::open(array('action' => 'UserController@vote', 'id' => 'vote')); ?>
+            <ul class="clearing-thumbs small-block-grid-2">
+                    <li>
+                     <a class="th [radius]" href="#" onclick='document.getElementById("vote").submit()'>
+                        <input type="hidden" name="photo1" value="<?php echo $image1->name; ?>"/>
+                        <img src="<?php echo $image1->link; ?>" alt="image" width="350">
+                    </a>
+                    <?php echo Form::close(); ?>
+                    </li>
+                    <li>
+                    <?php echo Form::open(array('action' => 'UserController@vote', 'id' => 'vote2')); ?>
+                    <a class="th [radius]" href="#" onclick='document.getElementById("vote2").submit()'>
+                        <input type="hidden" name="photo2" value="<?php echo $image2->name; ?>"/>
+                        <img src="<?php echo $image2->link; ?>" alt="image" width="350">
+                    </a>
+                    </li>                 
+                    </ul>
+        <?php echo Form::close(); ?>
+         </div>
+        </div>
+    </div>
+</div>
+</section>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+<script>
+      $(document).foundation();
+</script>
+<?php $__env->stopSection(); ?>
+<?php endif; ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

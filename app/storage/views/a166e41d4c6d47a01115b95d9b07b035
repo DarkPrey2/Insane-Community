@@ -1,0 +1,43 @@
+
+<?php $__env->startSection('content'); ?>
+<?php if(Auth::check()): ?>
+    <div class="row">
+        <div class="large-12 columns">    
+        <div class="large-8 large-centered panel radius columns">
+            <p><?php echo 'salut les gens'; ?></p>
+            <ul class="inline-list mister">
+                <li><a href="<?php echo URL::to('/photo'); ?>">Ajouter des photos</a></li>
+                <li><a href="<?php echo URL::to('/logout'); ?>">logout</a></li>
+            </ul>
+        </div>
+<?php  
+
+$users = DB::table('users')->get();
+
+    foreach ($users as $user) 
+{
+                
+    $name = $user->pseudo;
+    $content = $user->content;
+    $email = $user->email;
+}
+?>   
+<div class="large-12 panel radius columns">
+          <label>Speudo
+        <input id="informations" name="content" readonly="readonly" placeholder="<?php echo $name; ?>">
+      </label>
+      <label>Email:
+        <input id="informations" name="content" readonly="readonly" placeholder="<?php echo $email; ?>">
+      </label>
+      <label>Information sur le compte:
+      <textarea id="informations" name="content" readonly="readonly" placeholder="<?php echo $content; ?>"></textarea>
+      </label>
+    </div>
+  </div>
+</div>
+<?php else: ?>
+    <div class="alert-box warning radius">L'acces a la page n'est pas autorisé <b><a href="<?php echo URL::to('/signin'); ?>"> connexion ?</a></b></div>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

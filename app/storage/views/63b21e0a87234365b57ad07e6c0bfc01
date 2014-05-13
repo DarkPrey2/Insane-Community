@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="<?php echo url('css/foundation.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo url('css/style.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo url('css/normalize.css'); ?>" media="screen">
+    <script type="text/javascript" src="<?php echo url('js/vendor/jquery.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo url('js/foundation.min.js'); ?>"></script>
+<title>Ins4n3 G4ming</title>
+</head>
+<body>
+    <div id="row">
+    <div class="large-12 columns">
+    <?php if(Session::has('message')): ?>
+     <div class="alert-box warning radius"><?php echo Session::get('message'); ?></div>
+    <?php endif; ?>
+        <?php echo $__env->yieldContent('content'); ?>
+    </div>
+    </div>
+    <?php echo $__env->yieldContent('footer'); ?>
+</body>
+</html>

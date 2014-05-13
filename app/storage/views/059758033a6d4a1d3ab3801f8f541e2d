@@ -1,0 +1,22 @@
+
+<?php $__env->startSection('content'); ?>
+<?php if(Auth::check()): ?>
+    <div class="alert-box warning radius">L'acces a la page n'est pas autorisé pour les membres connectés <b><a href="<?php echo URL::to('/compte'); ?>"> retourner ?</a></b></div>
+<?php else: ?>
+<div class="large-6 large-centered columns panel"> 
+   <p><?php echo 'Bienvenue sur la page de connexion'; ?></p>
+   <div class="row">
+    <div class="large-6 columns">
+        <?php echo Form::open(array('action' => 'UserController@signin')); ?>
+        <?php echo Form::label('Nom de compte :'); ?>
+        <input type="text" name="username" class="" id="username" placeholder="nom du compte">
+        <?php echo Form::label('Mot de passe :'); ?>
+        <input type="password" name="password" class="" id="password" placeholder="mot de passe">
+        <button class="radius" type="submit">connexion</button>
+        <?php echo Form::close(); ?>
+       </div>
+   </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php endif; ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

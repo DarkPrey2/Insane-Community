@@ -1,0 +1,18 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="large-6 columns panel"> 
+   <p><?php echo 'Bienvenue sur la page de connexion'; ?></p>
+   <div class="row">
+   <div class="large-6 columns">   
+<?php echo Form::open(array('action' => 'SigninController@signin')); ?>
+<?php echo Form::label('Nom de compte :'); ?>
+<input type="text" name="username" class="" id="" placeholder="nom du compte">
+<?php echo Form::label('Mot de passe :'); ?>
+<input type="password" name="password" class="" id="" placeholder="mot de passe">
+<button class="radius" type="submit">connexion</button>
+<?php echo Form::close(); ?>
+   </div>
+   </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
