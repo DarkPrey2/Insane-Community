@@ -3,37 +3,110 @@ body{
     font-family:'Open Sans', sans-serif;
     width: 100%;
     height:100%;
-    background-image:url('../images/mainbg.png');
-
+    background-image:url('../images/panel.png');
 }
 
-#banner{
+#header{
     width:100%;
-    height:75px;
-    background:#1E1E1E;
-    border-bottom:4px solid #E44D26;
-    color:#ffffff;
-    box-shadow: 1px 1px 12px #555;
+    height:80px;
+    background-color:#1E1E1E;
     margin:0;
-}
-#banner a{
-    color:#ffffff;
-    text-decoration:none;
+    box-shadow: 1px 1px 12px #555;
+    padding-left:12px;
+    border-bottom:5px solid #046380;
 }
 
-#banner a:hover{
-    color:#CB4923;
+#header h3{
+    display:inline-block;
+    color:white;
+}
+
+#header a{ 
+    color:#ccc; 
+    text-shadow:0 -1px 0 black; 
+    padding:8px;
+    border-radius:3px;
     transition:1s;
 }
 
-#banner h3{
-    color:#ffffff;
+#header a:hover,a:focus
+{ 
+    background:rgba(0,0,0,.4); 
+    box-shadow:0 1px 0 rgba(255,255,255,.4); 
 }
 
-#banner ul,li{
+ #header a span
+ { 
+    margin-top: 31px;
+    margin-left: -27px;
+    color: #09C;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.9);
+    padding: 9px;
+    position:absolute;
+    border-radius:3px; 
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    transform:scale(0) rotate(-12deg);
+    opacity:0;
+    transition:all .25s;
+ }
+
+ #header a:hover span, a:focus span
+ { 
+    transform:scale(1) rotate(0);
+     opacity:1;
+ }
+
+#header ul,li{
     list-style:none;
     display:inline-block;
-    padding:7px;
+    padding:12px;
+}
+
+#box {
+  position: relative;
+  width: 60%;
+  background: #ddd;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 2em 1.5em;
+  color: rgba(0,0,0, .8);
+  text-shadow: 0 1px 0 #fff;
+  line-height: 1.5;
+  margin: 4px auto;
+}
+
+
+#box:before, #box:after {
+  z-index: -1; 
+  position: absolute; 
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%; 
+  top: 80%;
+  max-width:300px;
+  background: rgba(0, 0, 0, 0.8); 
+box-shadow: 3px 3px 10px 5px #000, 
+            0 0 4px rgba(0, 0, 0, .5) inset;
+  transform: rotate(-3deg);
+}
+
+#box:after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+#about{
+    color: #09C;
+}
+
+#pag i{
+  font-size:50px;
+  text-align:center;
+}
+#pag{
+  text-align:center;
 }
 
 @font-face {

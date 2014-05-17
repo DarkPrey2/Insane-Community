@@ -24,8 +24,3 @@
 @stop
 
 
-Au cours de l'année de Terminale nous avons eu pour but de realiser un projet
-Un projet complet qui à pour objectif d'être utilisé dans la vie courante
-Mais qui doit correspondre a des criteres precis
-
-

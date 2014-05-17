@@ -25,6 +25,8 @@ Route::match(['GET', 'POST'], '/article/create', 'ArticleController@create');
 
 Route::match(['GET', 'POST'], '/article/edit', 'ArticleController@edit');
 
+Route::get('/article/show', 'ArticleController@show');
+
 Route::get('/logout', 'UserController@logout');
 
 

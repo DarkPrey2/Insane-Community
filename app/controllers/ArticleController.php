@@ -8,9 +8,9 @@
             return View::make('article.article');
         }
 
-        public function show($id)
+        public function show()
         {
-            echo 'affichage des article avec pour id='.$id;
+           return View::make('article.show');
         }
 
         public function edit($id)
@@ -27,6 +27,7 @@
             $art_name = Input::get('article_name');
             $art_desc = Input::get('article_desc');
             $art = Input::get('article');
+            $link = Input::get('link');
 
 
             $validator = Validator::make(
@@ -34,7 +35,8 @@
                 array(
                     'article_name' => $art_name,
                     'article_desc' => $art_desc,
-                    'article' => $art
+                    'article' => $art,
+                    'link' => $link
                     ),
                 array(
                     'article_name' => 'required',
@@ -51,6 +53,7 @@
             $art_save->article_name = $art_name;
             $art_save->article_desc = $art_desc;
             $art_save->article = $art;
+            $art_save->link = $link;
             $art_save->save();
 
             return Redirect::to('/compte')->with('message', 'Articles enregistré avec succes ?');

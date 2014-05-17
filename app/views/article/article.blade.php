@@ -31,6 +31,9 @@
     {{ Form::label('Description') }}
    <input type="text" name="article_desc" id="article_desc" placeholder="description">
 
+       {{ Form::label('lien de l\'image') }}
+   <input type="text" name="link" id="link" placeholder="image">
+
    {{ Form::label('Article') }}
    <textarea name="article" id="article" cols="20" rows="20"></textarea><br>
 

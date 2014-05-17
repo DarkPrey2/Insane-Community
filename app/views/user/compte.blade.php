@@ -20,6 +20,7 @@
         <?php foreach ($select as $k => $art): ?>
             <?php echo ('<a href="article/'.$art->id.'/edit">'); ?><h3><?php echo $art->article_name; ?></h3><br>
             <p><?php echo $art->article_desc; ?></p>
+            <p><?php echo ('<img src="'.$art->link.'" alt="image">'); ?></p>
         <?php endforeach ?>
         </div>
 @else
